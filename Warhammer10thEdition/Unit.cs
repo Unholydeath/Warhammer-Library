@@ -8,19 +8,19 @@ namespace Warhammer10thEdition
 {
     public class Unit
     {
-        public string Name { get; init; }
-        public int Movement { get; init; }
-        public int Toughness { get; init; }
-        public int ArmorSave { get; init; }
-        public int Wounds { get; init; }
-        public int Leadership { get; init; }
-        public int ObjectiveControl {  get; init; }
-        public int InvulnerableSave { get; init; }
-        public List<Weapon> RangedWeapons { get; init; }
-        public List<Weapon> MeleeWeapons { get; init; }
-        public List<string> Abilities { get; init; }
-        public List<UnitComposition> UnitCompositions { get; init; }
-        public List<KeyWordEnum> KeyWords { get; init; }
+        public string Name { get; protected set; }
+        public int Movement { get; protected set; }
+        public int Toughness { get; protected set; }
+        public int ArmorSave { get; protected set; }
+        public int Wounds { get; protected set; }
+        public int Leadership { get; protected set; }
+        public int ObjectiveControl {  get; protected set; }
+        public int InvulnerableSave { get; protected set; }
+        public List<Weapon> RangedWeapons { get; protected set; }
+        public List<Weapon> MeleeWeapons { get; protected set; }
+        public List<string> Abilities { get; protected set; }
+        public List<UnitComposition> UnitCompositions { get; protected set; }
+        public List<KeyWordEnum> KeyWords { get; protected set; }
 
         public Unit (string name, int movement, int toughness, int armorSave, int wounds, int leadership, int objectiveControl, int invulnerableSave, List<Weapon> rangedWeapons, List<Weapon> meleeWeapons, List<string> abilities, List<UnitComposition> unitCompositions, List<KeyWordEnum> keyWords)
         {
