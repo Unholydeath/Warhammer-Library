@@ -1,0 +1,1 @@
+This is a library of Warhammer Information. It will start as a way to store info about 10th edition armies, detachments, enhancements, weapons, units, and stratagems. If things go well I will do the same for 9th edition and add functionality like calculating damage, expected damage output, and building army lists.
