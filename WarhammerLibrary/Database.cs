@@ -8,11 +8,11 @@ using Warhammer10thEdition;
 
 namespace WarhammerLibrary
 {
-    public class FileReader
+    internal class Database
     {
-        private string fileLocation = "C:\\Users\\thebo\\Documents\\WarhammerLibraryFiles\\SavedLibrary.json";
+        //private string fileLocation = "C:\\Users\\thebo\\Documents\\WarhammerLibraryFiles\\SavedLibrary.json";
 
-        public Dictionary<string, Army> GetFiles()
+        public Dictionary<string, Army> GetDictionary()
         {
             Dictionary<string, Army> armyDictionary = new Dictionary<string, Army>();
 
@@ -121,8 +121,8 @@ namespace WarhammerLibrary
             WeaponAbilityEnum unitRangedWeaponAbilityType = WeaponAbilityEnum.LETHAL_HITS;
             unitRangedWeaponAbility.SetWeaponAbilityEnum(unitRangedWeaponAbilityType);
 
-            unitRangedWeaponAbilities.Add(unitRangedWeaponAbility);
-
+            unitRangedWeaponAbilities.Add(unitRangedWeaponAbility);            
+            
             unitRangedWeapon.SetWeaponAbilities(unitRangedWeaponAbilities);
             unitRangedWeaponList.Add(unitRangedWeapon);
             unit.SetRangedWeapons(unitRangedWeaponList);
@@ -205,12 +205,13 @@ namespace WarhammerLibrary
             return armyDictionary;
         }
 
-        public void SaveFiles(Dictionary<string, Army> armyDictionary)
-        {                       
+        /*public void SaveFiles(Dictionary<string, Army> armyDictionary)
+        {
             string json = JsonSerializer.Serialize(armyDictionary, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(fileLocation, json);
 
             Console.WriteLine("Library saved to JSON file.");
-        }
+        }*/
+
     }
 }
