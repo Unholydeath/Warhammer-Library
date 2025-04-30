@@ -8,14 +8,23 @@ namespace Warhammer10thEdition
 {
     public class UnitComposition
     {
-        public int UnitCount { get; init; }
-        public int PointCost { get; init; }
+        public int UnitCount { get; protected set; }
+        public int PointCost { get; protected set; }
         
-
-        public UnitComposition(int unitCount, int points)
+        public void SetUnitCount(int unitCount)
         {
             UnitCount = unitCount;
-            PointCost = points;            
+        }
+
+        public void SetPointCost(int pointCost)
+        {
+            PointCost = pointCost;
+        }
+
+        public UnitComposition()
+        {
+            UnitCount = 0;
+            PointCost = 0;
         }
 
     }

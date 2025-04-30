@@ -8,10 +8,34 @@ namespace Warhammer10thEdition
 {
     public class SupremeCommander : Leader
     {
-        public SupremeCommander(string name, int movement, int toughness, int armorSave, int wounds, int leadership, int objectiveControl, int invulnerableSave, List<Weapon> rangedWeapons, List<Weapon> meleeWeapons, List<string> abilities, List<UnitComposition> unitCompositions, List<KeyWordEnum> keyWords) : base(name, movement, toughness, armorSave, wounds, leadership, objectiveControl, invulnerableSave, rangedWeapons, meleeWeapons, abilities, unitCompositions, keyWords)
+
+        public List<string> CommanderAbilities { get; protected set; }
+
+        public void AddCommanderAbility(string commanderAbility)
         {
+            if (CommanderAbilities == null)
+            {
+                CommanderAbilities = new List<string>();
+            }
+            CommanderAbilities.Add(commanderAbility);
         }
 
-        public List<string> CommanderAbilities { get; init; }
+        public void RemoveCommanderAbility(string commanderAbility)
+        {
+            if (CommanderAbilities != null)
+            {
+                CommanderAbilities.Remove(commanderAbility);
+            }
+        }
+
+        public void SetCommanderAbilities(List<string> commanderAbilities)
+        {
+            CommanderAbilities = commanderAbilities;
+        }
+
+        public SupremeCommander()
+        {
+            CommanderAbilities = new List<string>();
+        }
     }
 }

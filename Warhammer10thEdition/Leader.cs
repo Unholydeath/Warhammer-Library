@@ -8,15 +8,61 @@ namespace Warhammer10thEdition
 {
     public class Leader : Unit
     {
-        public Leader(string name, int movement, int toughness, int armorSave, int wounds, int leadership, int objectiveControl, int invulnerableSave, List<Weapon> rangedWeapons, List<Weapon> meleeWeapons, List<string> abilities, List<UnitComposition> unitCompositions, List<KeyWordEnum> keyWords) : base(name, movement, toughness, armorSave, wounds, leadership, objectiveControl, invulnerableSave, rangedWeapons, meleeWeapons, abilities, unitCompositions, keyWords)
+        public List<Unit> LeadUnits { get; protected set; }
+        public string Buff {  get; protected set; }
+        public bool IsWarlord { get; protected set; }
+        public bool IsEpicHero { get; protected set; }
+        public Enhancement Enhancement { get; protected set; }
+
+        public void AddLeadUnit(Unit unit)
         {
+            if (LeadUnits == null)
+            {
+                LeadUnits = new List<Unit>();
+            }
+            LeadUnits.Add(unit);
         }
 
-        public List<Unit> LeadUnits { get; init; }
-        public string Buff {  get; init; }
-        public bool IsWarlord { get; }
-        public bool IsEpicHero { get; init; }
-        public Enhancement Enhancement { get; init; }
+        public void RemoveLeadUnit(Unit unit)
+        {
+            if (LeadUnits != null)
+            {
+                LeadUnits.Remove(unit);
+            }
+        }
 
+        public void SetLeadUnits(List<Unit> leadUnits)
+        {
+            LeadUnits = leadUnits;
+        }
+
+        public void SetBuff(string buff)
+        {
+            Buff = buff;
+        }
+
+        public void SetIsWarlord(bool isWarlord)
+        {
+            IsWarlord = isWarlord;
+        }
+
+        public void SetIsEpicHero(bool isEpicHero)
+        {
+            IsEpicHero = isEpicHero;
+        }
+
+        public void SetEnhancement(Enhancement enhancement)
+        {
+            Enhancement = enhancement;
+        }
+
+        public Leader()
+        {
+            LeadUnits = new List<Unit>();
+            Buff = string.Empty;
+            IsWarlord = false;
+            IsEpicHero = false;
+            Enhancement = null;
+        }
     }
 }

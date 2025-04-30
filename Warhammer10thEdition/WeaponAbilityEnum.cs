@@ -10,6 +10,13 @@ namespace Warhammer10thEdition
     {
         LETHAL_HITS,
         SUSTAINED_HITS,
-        DEVASTATING_WOUNDS
+        DEVASTATING_WOUNDS,
+        ANTI_PSYKER,
+        ANTI_INFANTRY,
+        ANTI_VEHICLE,
+        ANTI_MONSTER,
+        ANTI_CHARACTER,
+        ANTI_FLY,
+        NONE
     }
 }

@@ -8,17 +8,37 @@ namespace Warhammer10thEdition
 {
     public class Enhancement
     {
-        public string Name { get; init; }
-        public string EligibleUsers { get; init; }
-        public string Ability {  get; init; }
-        public int PointCost { get; init; }
+        public string Name { get; protected set; }
+        public string EligibleUsers { get; protected set; }
+        public string Ability {  get; protected set; }
+        public int PointCost { get; protected set; }
 
-        public Enhancement(string name, string eligibleUsers, string ability, int pointCost)
+        public void SetName(string name)
         {
             Name = name;
+        }
+
+        public void SetEligibleUsers(string eligibleUsers)
+        {
             EligibleUsers = eligibleUsers;
+        }
+
+        public void SetAbility(string ability)
+        {
             Ability = ability;
+        }
+
+        public void SetPointCost(int pointCost)
+        {
             PointCost = pointCost;
+        }
+
+        public Enhancement()
+        {
+            Name = "";
+            EligibleUsers = "";
+            Ability = "";
+            PointCost = 0;
         }
     }
 }
